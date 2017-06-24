@@ -6,11 +6,14 @@ CREATE TABLE `sw_asset_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID，自动递增',
   `assert_name` varchar(64) DEFAULT '' COMMENT '资产名称',
   `assert_type` int(11) DEFAULT NULL COMMENT '资产类型，固定资产/移动资产？',
+  `assert_image` varchar(256) DEFAULT NULL COMMENT '这里最好只存储一个Url',
   `qr_code` varchar(256) DEFAULT NULL COMMENT '二维码 ',
   `create_time` bigint(255) DEFAULT NULL,
   `update_time` bigint(255) DEFAULT NULL,
   `status` int(8) unsigned zerofill DEFAULT NULL COMMENT '状态，0正常，1不正常',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
