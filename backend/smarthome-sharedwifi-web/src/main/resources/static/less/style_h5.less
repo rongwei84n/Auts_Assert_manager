@@ -1,0 +1,295 @@
+.wrap{
+  margin:0 auto;
+  position: relative;
+  display: flex;
+  background: #fff;
+  font-family: "微软雅黑";
+  //内容区
+  .content{
+    width: 100%;
+    .login-left{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    .login-right{
+      width: 100%;
+      margin:auto;
+      .state{
+        text-align: center;
+        display: none;
+        font-size: 14px;
+        color: rgb(148,148,148);
+        margin-top: 70px;
+      }
+    }
+    .btn{
+      width: 12.47rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      color: #fff;
+      border: 0;
+      border-radius: 3rem;
+      background: #ff8000;
+      display: block;
+      margin: 0px auto 3.2rem;
+      font-size: .6rem;
+    }
+    .page{
+      display: none;
+      text-align: center;
+      margin: auto;
+      h2 {
+        font-size: .76rem;
+        padding: .5rem 0;
+      }
+    }
+    .page-1{
+      .banner{
+        img{
+          width: 100%;
+        }
+      }
+
+      h3{
+
+        font-size: .6rem;
+        margin:2.6rem 0 1.7rem;
+        color: rgb(42,42,42);
+      }
+      p{
+        color: rgb(148,148,148);
+        font-size: .5rem;
+        .agreement{
+          color: rgb(69,142,253);
+        }
+      }
+    }
+    .page-2{
+      text-align: center;
+      h2{
+        background: rgb(240, 240, 247);
+      }
+      #tip{
+        font-size: 0.42rem;
+        color: rgb(109,109,109);
+        width: 6.41rem;
+        text-align: center;
+      }
+      h3{
+        font-size: 0.68rem;
+        color: rgb(42,42,42);
+        span{
+          font-size: 1.28rem;
+          margin-bottom: 0.64rem;
+          color: rgb(255,128,0);
+          margin-right: 0.21rem;
+        }
+      }
+      .pay-amount{
+        font-size: .6rem;
+        margin: 2.05rem 0 1.36rem;
+      }
+      .pay-method{
+        font-size: .6rem;
+        margin: 1.28rem auto;
+      }
+      .pay-wx{
+        font-size: 0.51rem;
+        img{
+          width: 0.85rem;
+          margin-right: 0.21rem;
+          vertical-align: middle;
+        }
+      }
+      .p2-tips{
+        font-size: 0.51rem;
+        color: #949494;
+        margin: 0.64rem auto 0;
+        border-bottom: 1px solid rgb(220,220,220);
+        width: 11.53rem;
+        padding-bottom: 1.28rem
+      }
+      .payment{
+        img{
+          vertical-align: middle;
+          width: 1.49rem;
+          margin-right: 0.34rem;
+        }
+      }
+      #code{
+        width: 4.27rem;
+        height: 4.27rem;
+        margin: 0 auto;
+        background: #EAEAEA;
+        position: relative;
+
+        table{
+          margin:0 auto;
+        }
+      }
+      .state{
+        font-size: 0.51rem;
+        color:rgb(148,148,148);
+        width: 11.53rem;
+        line-height: 0.77rem;
+        display: inline-block;
+      }
+      .btn-pay{
+        margin:2.39rem auto 3.20rem;
+        opacity: .4;
+      }
+
+    }
+    .page-3,.page-4,.page-5{
+      width:100%;
+      height:100%;
+      position:relative;
+      .result{
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 15rem;
+        height: 10rem;
+        right: 0;
+        img{
+          margin: 0 0 40px;
+          width: 37.5px;
+        }
+        p{
+          font-size: 15px;
+          color: #2a2a2a;
+          margin-bottom: 20px;
+        }
+        span{
+          font-size: 12px;
+          color: rgb(148,148,148);
+        }
+      }
+
+    }
+    .page-show{
+      display: block;
+    }
+  }
+  .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(148,148,148);
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    background: rgb(248,248,248);
+    .copyright{
+      width: 90%;
+      margin: 0 auto;
+      height: 36px;
+    }
+    .left{
+      float:left;
+      img{
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 20px;
+      }
+      & :nth-child(3){
+        margin-left: 18px;
+      }
+    }
+    .right{
+      float:right;
+    }
+  }
+  .pop{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    z-index: 44;
+    //display: flex;
+    .cover{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      background: #4e4e4e;
+      opacity: 0.8;
+      z-index: 3;
+      display: flex;
+    }
+    .popmsg{
+      width: 80%;
+      margin: auto;
+      background: #fff;
+      z-index: 5;
+      text-align: CENTER;
+      position: relative;
+      .close{
+        width: 24px;
+        top: 14px;
+        right: 14px;
+        position: absolute;
+      }
+      .pop-cont{
+        padding: 10px 0 20px;
+        font-size: 14px;
+        color: #687276;
+        h3{
+          padding-bottom: 20px;
+        }
+        #tips{
+          border-bottom: 1px solid #ccc;
+          color: #ff8000;
+          background: #fff;
+        }
+        .pop-detail{
+          text-align: left;
+          padding: 5px 10px 20px;
+          line-height: 20px;
+          height: 315px;
+          background: #f7f7f7;
+          overflow-y: scroll;
+          p{
+            margin: 15px 0;
+          }
+        }
+        .pop-company{
+          text-align: right;
+        }
+      }
+      button{
+        width: 100%;
+        border: 0;
+        border-top: 1px solid rgb(220,220,220);
+        background: #ffffff;
+        color: #ff8000;
+        font-size: 0.55rem;
+        padding: 0.5rem 0;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+    }
+  }
+  .pop-rules{
+    width: 72%;
+    position: fixed;
+    font-size: .64rem;
+    color: #fff;
+    bottom: 8.7rem;
+    text-align: CENTER;
+    height: 1.58rem;
+    opacity: .8;
+    left: 14%;
+    line-height: 1.58rem;
+    border-radius: 3px;
+    background: rgb(49,49,49);
+    display: none;
+  }
+}

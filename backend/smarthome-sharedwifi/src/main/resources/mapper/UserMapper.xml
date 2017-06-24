@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.smarthome.sharedwifi.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.phicomm.smarthome.sharedwifi.model.app.UserDaoModel">
+        <result column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="open_id" property="openId" />
+        <result column="wx_nickname" property="wxNickName" />
+        <result column="wx_head_iconurl" property="wxHeadIconUrl" />
+        <result column="iphone" property="iPhone" />
+        <result column="account_name" property="accountName" />
+        <result column="age" property="age" />
+        <result column="img" property="img" />
+        <result column="mail_address" property="mailAddress" />
+        <result column="phi_nickname" property="phiNickName" />
+        <result column="real_name" property="realName" />
+        <result column="zipcode" property="zipCode" />
+        <result column="zone" property="zone" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <sql id="insert_base_column_list">
+        uid, open_id, wx_nickname,wx_head_iconurl,iphone,account_name,age,img, mail_address,phi_nickname,real_name,zipcode,zone,create_time,update_time,status
+    </sql>
+    <sql id="Base_Column_List">
+        id, <include refid="insert_base_column_list"></include>
+    </sql>
+
+    <select id="queryUidByOpenId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from sw_user 
+        where open_id = #{openId} and status=0;
+    </select>
+    
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.phicomm.smarthome.sharedwifi.model.app.UserDaoModel">
+        insert into sw_user(<include refid="insert_base_column_list"></include>) 
+        values(#{uid}, #{openId}, #{wxNickName}, #{wxHeadIconUrl}, #{iPhone}, #{accountName}, #{age}, #{img}, #{mailAddress}, #{phiNickName}, #{realName}, #{zipCode}, #{zone}, #{createTime}, #{updateTime}, #{status})
+    </insert>
+
+</mapper>

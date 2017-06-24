@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.smarthome.sharedwifi.dao.GuestOrderMapper">
+	<resultMap id="BaseResultMap" type="com.phicomm.smarthome.sharedwifi.model.h5web.GuestOrder">
+		<result column="id" property="id" />
+		<result column="order_id" property="orderId" />
+		<result column="guest_id" property="guestId" />
+		<result column="user_share_para_id" property="userShareParaId" />
+		<result column="order_status" property="orderStatus" />
+		<result column="order_pay_status" property="orderPayStatus" />
+		<result column="buy_time" property="buyTime" />
+		<result column="online_time_total" property="onlineTimeTotal" />
+		<result column="online_time_total_cost" property="onlineTimeTotalCost" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<parameterMap id="Order" type="com.phicomm.smarthome.sharedwifi.model.h5web.GuestOrder"/>
+
+	<sql id="Base_Column_List">
+		id, order_id, guest_id, user_share_para_id,order_status,order_pay_status,buy_time,online_time_total,
+		online_time_total_cost,create_time,update_time,status 
+	</sql>
+
+	<select id="findByOrderId" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from sw_guest_order 
+		where order_id = #{orderId} and status=0;
+	</select>
+	
+	
+	<insert id="insertGuestOrder" parameterType="com.phicomm.smarthome.sharedwifi.model.h5web.GuestOrder">
+		insert into sw_guest_order 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="guestOrder.orderId != null">
+				order_id,
+			</if>
+			<if test="guestOrder.guestId != null">
+				guest_id,
+			</if>
+			<if test="guestOrder.userShareParaId != null">
+				user_share_para_id,
+			</if>
+			<if test="guestOrder.orderStatus != null">
+				order_status,
+			</if>
+			<if test="guestOrder.orderPayStatus != null">
+				order_pay_status,
+			</if>
+			<if test="guestOrder.buyTime != null">
+				buy_time,
+			</if>
+			<if test="guestOrder.onlineTimeTotal != null">
+				online_time_total,
+			</if>
+			<if test="guestOrder.onlineTimeTotalCost != null">
+				online_time_total_cost,
+			</if>
+			<if test="guestOrder.createTime != null">
+				create_time,
+			</if>
+			<if test="guestOrder.updateTime != null">
+				update_time,
+			</if>
+			<if test="guestOrder.status != null">
+				status,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="guestOrder.orderId != null">
+				#{guestOrder.orderId},
+			</if>
+			<if test="guestOrder.guestId != null">
+				#{guestOrder.guestId},
+			</if>
+			<if test="guestOrder.userShareParaId != null">
+				#{guestOrder.userShareParaId},
+			</if>
+			<if test="guestOrder.orderStatus != null">
+				#{guestOrder.orderStatus},
+			</if>
+			<if test="guestOrder.orderPayStatus != null">
+				#{guestOrder.orderPayStatus},
+			</if>
+			<if test="guestOrder.buyTime != null">
+				#{guestOrder.buyTime},
+			</if>
+			<if test="guestOrder.onlineTimeTotal != null">
+				#{guestOrder.onlineTimeTotal},
+			</if>
+			<if test="guestOrder.onlineTimeTotalCost != null">
+				#{guestOrder.onlineTimeTotalCost},
+			</if>
+			<if test="guestOrder.createTime != null">
+				#{guestOrder.createTime},
+			</if>
+			<if test="guestOrder.updateTime != null">
+				#{guestOrder.updateTime},
+			</if>
+			<if test="guestOrder.status != null">
+				#{guestOrder.status},
+			</if>
+		</trim>
+	</insert>
+	
+	
+	
+	<update id="updateGuestOrder" parameterType="com.phicomm.smarthome.sharedwifi.model.h5web.GuestOrder">
+		update sw_guest_order  
+		<set>
+			<if test="guestOrder.guestId != null">
+				guest_id=#{guestOrder.guestId},
+			</if>
+			<if test="guestOrder.userShareParaId != null">
+				user_share_para_id=#{guestOrder.userShareParaId},
+			</if>
+			<if test="guestOrder.orderStatus != null">
+				order_status=#{guestOrder.orderStatus},
+			</if>
+			<if test="guestOrder.orderPayStatus != null">
+				order_pay_status=#{guestOrder.orderPayStatus},
+			</if>
+			<if test="guestOrder.buyTime != null">
+				buy_time=#{guestOrder.buyTime},
+			</if>
+			<if test="guestOrder.onlineTimeTotal != null">
+				online_time_total=#{guestOrder.onlineTimeTotal},
+			</if>
+			<if test="guestOrder.onlineTimeTotalCost != null">
+				online_time_total_cost=#{guestOrder.onlineTimeTotalCost},
+			</if>
+			<if test="guestOrder.updateTime != null">
+				update_time=#{guestOrder.updateTime},
+			</if>
+			<if test="guestOrder.status != null">
+				status=#{guestOrder.status},
+			</if>
+		</set>
+			where order_id = #{guestOrder.orderId}
+		</update>
+
+</mapper>

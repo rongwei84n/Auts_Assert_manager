@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>1_共享安全WiFi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="pyt" content="sharedWiFi_p_1.0.0_build04_dev" />
+    <link rel="stylesheet"  href="css/reset.css" />
+    <link rel="stylesheet"  href="css/style.css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <div class="header_containt">
+            <a href="javascript:;"><img src="images/logo.png" /></a>
+        </div>
+    </div>
+    <div class="content clearfix">
+        <div class="login-left">
+            <img src="images/banner.png" alt=""/>
+        </div>
+        <div class="login-right">
+            <!--登录页-->
+            <div class="page page-1 page-show">
+                <h3>欢迎使用<span>1_共享安全WiFi</span></h3>
+                <button class="btn btn-online">红包打赏上网</button>
+                <div>使用即代表同意<button class="agreement">《用户协议》</button></div>
+            </div>
+            <!--支付页-->
+            <div class="page page-2">
+                <h3>支付金额：<span class="fee">1.00</span>元</h3>
+                <p class="p2-tips">完成打赏将享受2小时高速上网</p>
+                <div class="payment">
+                    支付方式：
+                    <img src="images/wepay.png" alt=""/>
+                    微信支付
+                </div>
+                <div class="qrcode">
+                    <div id="code"></div>
+                    <p id="tip">二维码加载中...</p>
+                    <p id="refresh">刷新</p>
+                    <img id="loading" src="images/loading.gif" alt=""/>
+                    <img id="load-fail" src="images/load-fail.png" alt=""/>
+                </div>
+            </div>
+            <!--支付完成页-->
+            <div class="page page-3">
+                <img src="images/success.png" alt=""/>
+                <p>已成功连接<span>1_共享安全WiFi</span></p>
+                <span>可享受2小时高速上网</span>
+            </div>
+            <div class="page page-4">
+                <img src="images/fail.png" alt=""/>
+                <p>支付失败！</p>
+                <span>您暂时不能上网</span>
+            </div>
+            <div class="page page-5">
+                <img src="images/connect.png" alt=""/>
+                <p>连接中，请稍后</p>
+            </div>
+            <h3 class="state">当前WiFi由路由器管理员提供，斐讯公司不对该服务负责，费用一旦扣取，无法退还</h3>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright normalbackground">
+            <div class="left">
+                <img src="images/police1.png"/><span>沪ICP&nbsp;备&nbsp;09048395&nbsp;号</span>
+                <img src="images/police2.png"/><span>沪公网安备&nbsp;31011702000184&nbsp;号</span>
+            </div>
+            <div class="right">
+                <div>版权所有&nbsp;©&nbsp;上海斐讯数据通信技术有限公司</div>
+            </div>
+        </div>
+    </div>
+    <!--弹窗-->
+    <div class="pop" style="display: none;z-index: 50;">
+        <div class="cover"></div>
+        <div class="popmsg">
+            <div class="pop-cont">
+                <h3 id="tips">斐讯路由器用户使用协议</h3>
+                <div class="pop-detail">
+                    <p>欢迎使用斐讯路由器提供的软件及服务!</p>
+                    <p>为了更好的为您提供上网服务，在使用此网络服务前，请仔细阅读本协议，您的使用、认证等行为代表对本协议的接受，并同意接受本协议各项条款的约束。我们保证在您使用斐讯路由器的过程中，绝不涉及用户在手机上保存的个人隐私数据。</p>
+                    <p>一. 用户不得利用本服务制作、上传、复制、发布、传播法律法规政策禁止的内容，包括但不限于下列信息：</p>
+                    <ul>
+                        <li>（ 1 ）反对宪法所确定的基本原则的；</li>
+                        <li>（ 2 ）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</li>
+                        <li>（ 3 ）损害国家荣誉和利益的；</li>
+                        <li>（ 4 ）煽动民族仇恨、民族歧视，破坏民族团结的；</li>
+                        <li>（ 5 ）破坏国家宗教政策，宣扬邪教和封建迷信的；</li>
+                        <li>（ 6 ）散布谣言，扰乱社会秩序，破坏社会稳定的；</li>
+                        <li>（ 7 ）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</li>
+                        <li>（ 8 ）侮辱或者诽谤他人，侵害他人合法权益的；</li>
+                    </ul>
+                    <p>二. 用户不得利用本服务制作、上传、复制、发布、传播干扰我司正常运营，侵犯其他用户或第三方合法权益的内容；</p>
+                    <p>三. 用户利用本服务所表达的观点、建议等内容均为用户本人看法，不代表我司官方的观点。对于用户违法或者违反本协议的使用而引起的一切责任，由用户负全部责任，一概与本公司无关，导致我司损失的，我司有权要求用户赔偿，并有权立即停止向其提供服务。</p>
+                    <p class="pop-company">上海斐讯数据通信技术有限公司</p>
+                    <p class="pop-company">2017年7月</p>
+                </div>
+            </div>
+            <img class="close" src="images/close.png" alt=""/>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script th:inline="javascript">
+//  后台传值
+    var device_ip=[[${deviceIp}]],                   // 终端的内网ip
+        device_mac=[[${deviceMac}]],                  // 终端mac
+        router_ip=[[${routerIp}]],
+        router_mac=[[${routerMac}]],                  // 路由器mac
+        router_port=[[${routerPort}]],
+        online_time_unit=[[${onlineTimeUnit}]],            // 上网时长单位
+        online_time_unit_price=[[${onlineTimeUnitPrice}]],      // 上网时长单位价格
+        sign=[[${sign}]],                        // 校验串
+        timestamp=[[${timestamp}]];                   // 时间戳
+
+    
+//    var device_ip="192.168.2.130",                   // 终端的内网ip
+//        device_mac="4c:32:75:95:86:77",                  // 终端mac
+//        router_ip="192.168.2.1",
+//        router_mac="4c:32:75:95:86:77",                  // 路由器mac
+//        router_port="2060",
+//        online_time_unit="2",            // 上网时长单位
+//        online_time_unit_price="1",      // 上网时长单位价格
+//        sign="123",                        // 校验串
+//        timestamp="123";                   // 时间戳
+</script>
+<script src="js/common.js"></script>
+<script>
+    $(".agreement").click(function () {
+        $(".pop").css("display","block");
+    });
+    $(".close").click(function () {
+        $(".pop").css("display","none");
+    });
+
+</script>
+</body>
+</html>

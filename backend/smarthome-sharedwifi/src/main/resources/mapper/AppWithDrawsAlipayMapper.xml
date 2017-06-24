@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.smarthome.sharedwifi.dao.AppWithDrawsAlipayMapper">
+    <resultMap id="BaseResultMap" type="com.phicomm.smarthome.sharedwifi.model.app.AppWithDrawsAlipayDaoModel">
+        <result column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="cost" property="cost" />
+        <result column="alipay_account" property="alipayAccount" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+        <result column="phone" property="phoneNum" />
+        <result column="nick_name" property="nickname" />
+        <result column="order_id" property="orderNum" />
+        <result column="withdraw_time" property="withDrawTime" />
+    </resultMap>
+
+    <sql id="insert_base_column_list">
+        uid, cost, alipay_account,create_time,update_time,status, phone, nick_name, order_id, withdraw_time
+    </sql>
+    <sql id="Base_Column_List">
+        id, <include refid="insert_base_column_list"></include>
+    </sql>
+
+    <select id="queryGreaterThanCreate" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from sw_user_with_draws_alipay 
+        where create_time > #{createTime} ;
+    </select>
+    
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.phicomm.smarthome.sharedwifi.model.app.AppWithDrawsAlipayDaoModel">
+        insert into sw_user_with_draws_alipay(<include refid="insert_base_column_list"></include>) 
+        values(#{uid}, #{cost}, #{alipayAccount}, #{createTime}, #{updateTime}, #{status}, #{phoneNum}, #{nickname}, #{orderNum}, #{withDrawTime})
+    </insert>
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.smarthome.sharedwifi.dao.OrderIdGeneratorMapper">
+	<resultMap id="BaseResultMap" type="com.phicomm.smarthome.sharedwifi.model.h5web.OrderIdGenerater">
+		<result column="id" property="id" />
+		<result column="md5_id" property="md5Id" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<parameterMap id="OrderIdGenerater"
+		type="com.phicomm.smarthome.sharedwifi.model.h5web.OrderIdGenerater" />
+
+	<sql id="Base_Column_List">
+		id, md5_id,create_time,update_time,status
+	</sql>
+
+	<insert id="getOrderId" parameterType="com.phicomm.smarthome.sharedwifi.model.h5web.OrderIdGenerater" useGeneratedKeys="true" keyProperty="orderIdGenerater.id" keyColumn="id">
+		insert into sw_order_id_generator(create_time,update_time)values
+		(#{orderIdGenerater.createTime},#{orderIdGenerater.updateTime})
+		
+		<!-- 
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id"> 
+			SELECT LAST_INSERT_ID() 
+		</selectKey> 
+		-->
+	</insert>
+</mapper>
+
+

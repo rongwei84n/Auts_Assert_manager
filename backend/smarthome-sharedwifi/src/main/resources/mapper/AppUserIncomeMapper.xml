@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phicomm.smarthome.sharedwifi.dao.AppUserIncomeMapper">
+    <resultMap id="BaseResultMap" type="com.phicomm.smarthome.sharedwifi.model.app.AppUserIncomeDaoModel">
+        <result column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="router_mac" property="routerMac" />
+        <result column="today_income" property="todayIncome" />
+        <result column="total_income" property="totalIncome" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+        <result column="today_date" property="todayDate" />
+    </resultMap>
+
+
+    <sql id="Insert_Base_Column_List">
+        uid, router_mac, today_income, total_income, create_time, update_time, status, today_date
+    </sql>
+    <sql id="Base_Column_List">
+        id, <include refid="Insert_Base_Column_List"></include>
+    </sql>
+
+    <select id="findByUid" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from sw_user_income 
+        where uid = #{uid} and status=0;
+    </select>
+    
+    <update id="updateById" parameterType="com.phicomm.smarthome.sharedwifi.model.app.AppUserIncomeDaoModel">
+        update sw_user_income
+        <set>
+            <if test="uid != null">uid=#{uid},</if>
+            <if test="routerMac != null">router_mac=#{routerMac},</if>
+            <if test="todayIncome != null">today_income=#{todayIncome},</if>
+            <if test="totalIncome != null">total_income=#{totalIncome},</if>
+            <if test="updateTime != null">update_time=#{updateTime},</if>
+            <if test="status != null">status=#{status}</if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>
