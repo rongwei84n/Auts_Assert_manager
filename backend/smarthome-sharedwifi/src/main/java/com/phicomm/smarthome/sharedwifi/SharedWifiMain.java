@@ -24,7 +24,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = { "com.phicomm.smarthome.sharedwifi.**" })
 @PropertySources({ @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true),
 		@PropertySource(value = "classpath:server.properties", ignoreResourceNotFound = true) })

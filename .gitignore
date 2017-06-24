@@ -9,3 +9,15 @@
 /backend/smarthome-register-server/.settings/org.eclipse.core.resources.prefs
 /backend/smarthome-register-server/.settings/org.eclipse.jdt.core.prefs
 /backend/smarthome-register-server/.settings/org.eclipse.m2e.core.prefs
+/backend/smarthome-sharedwifi-web/.classpath
+/backend/smarthome-sharedwifi-web/.project
+/backend/smarthome-sharedwifi-web/.settings/org.eclipse.core.resources.prefs
+/backend/smarthome-sharedwifi-web/.settings/org.eclipse.jdt.core.prefs
+/backend/smarthome-sharedwifi-web/.settings/org.eclipse.m2e.core.prefs
+/backend/smarthome-sharedwifi/.classpath
+/backend/smarthome-sharedwifi/.gitignore
+/backend/smarthome-sharedwifi/.project
+/backend/smarthome-sharedwifi/.settings/org.eclipse.core.resources.prefs
+/backend/smarthome-sharedwifi/.settings/org.eclipse.jdt.core.prefs
+/backend/smarthome-sharedwifi/.settings/org.eclipse.m2e.core.prefs
+/backend/smarthome-sharedwifi/logs/smarthome-sharedwifi.log
