@@ -3,3 +3,9 @@
 /backend/smarthome-gateway/.settings
 /backend/smarthome-gateway/.classpath
 /backend/smarthome-gateway/.project
+/backend/smarthome-common/.classpath
+/backend/smarthome-register-server/.classpath
+/backend/smarthome-register-server/.project
+/backend/smarthome-register-server/.settings/org.eclipse.core.resources.prefs
+/backend/smarthome-register-server/.settings/org.eclipse.jdt.core.prefs
+/backend/smarthome-register-server/.settings/org.eclipse.m2e.core.prefs
