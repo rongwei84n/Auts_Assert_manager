@@ -76,5 +76,4 @@
 			<url>http://szrd.phiwifi.com:5050/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-
 </project>

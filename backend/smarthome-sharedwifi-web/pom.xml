@@ -13,7 +13,7 @@
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://szrd.phiwifi.com:5050/repository/maven-public/</url>
+			<url>http://repo.maven.apache.org/repository/maven-public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
